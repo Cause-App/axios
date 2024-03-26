@@ -2929,7 +2929,7 @@ const httpAdapter = isHttpAdapterSupported && function httpAdapter(config) {
 
     // Create the request
     req = transport.request(options, function handleResponse(res) {
-      if (req.destroyed) return;
+      if (req.aborted) return;
 
       const streams = [res];
 
